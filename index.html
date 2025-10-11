@@ -1,82 +1,620 @@
-<!doctype html>
-<html>
-  <head>
-    <title>My first webpage</title>
-  </head>
-
-  <body>
-    <h1>Welcome to my JAMStack website</h1>
-    <h3>Its super easy</h3>
-
-    <p>This website is build with HTML and deployed using GitHub. This is for an in-class activity for my ISTM 310 course.</p>
-    <h3 align="center">About Me</h3>
-    <br>
-
-<p>Howdy! My name is Archis Ukidwe, and I'm currently a student at <a href="https://www.tamu.edu/">Texas A&M University</a>. I'm majoring in M.I.S, and would like to add a minor in Economics and AI. I've created this website for a project for my ISTM 310 class.</p>
-
-<p>So far this year I'm involved in 2 organizations: 180 Degrees Consulting and the <a href="https://www.aggiedsp.org/">Lambda Nu chapter of Delta Sigma Pi</a>. My current goal is to work in consulting after gradutation, but I'm still trying to find what I like around campus. Some of my hobbies outside of school include football, hiking, and photography.</p>
-<br>
-    <table bgcolor="#FFFFFF" align="center" width="900px" cellpadding="15px">
-<tr>
-<td>
-<h1 align="center">Archis Ukidwe Website Favorites</h1>
-<hr width="900px" align="center"/>
-
-<hr width="900px" align="center"/>
-
-<h2 align="center">Favorite Books</h2>
-<table border="1" align="center">
-<tr>
-<th><u>Book Title</u></th>
-<th><u>Author</u></th>
-<th><u>Awards</u></th>
-<th><u>Year Published</u></th>
-</tr>
-
-<tr>
-<td><i>Harry Potter and the Order of the Phoenix</i></td>
-<td>J.K Rowling</td>
-<td>American Library Association Best Book</td>
-<td>2003</td>
-</tr>
-
-<tr>
-<td><i>The Book Thief</i></td>
-<td>Markus Zusak</td>
-<td>Book Sense Book of the Year</td>
-<td>2005</td>
-</tr>
-
-<tr>
-<td><i>The Giver</i></td>
-<td>Lois Lowry</td>
-<td>John Newbery Medal</td>
-<td>1993</td>
-</tr>
-</table>
-
-<hr width="900px" align="center"/>
-<h2 align="center">Favorite Texas Vacation Sites</h2>
-
-<ul>
-<li><a href="https://tpwd.texas.gov/state-parks/caddo-lake">Caddo Lake State Park</a></li>
-<li><a href="https://tpwd.texas.gov/state-parks/enchanted-rock">Enchanted Rock</a></li>
-<li><a href="https://www.nps.gov/bibe/index.htm">Big Bend National Park</a></li>
-</ul>
-<hr width="900px" align="center"/>
-
-<h2 align="center">Favorite Memories</h2>
-<p align="center">
-<img src="babypicture.JPG" alt="Baby Picture" width="200px">
-<img src="philmont.JPG" alt="Philmont Crew" width="200px">
-<img src="stargazing.JPG" alt="Senior Trip" width="200px" height="150px">
-<hr width="900px" align="center"/>
-
-
-<p align="center"><a href="mailto:archisukidwe@tamu.edu">Email Me</a></p>
-
-</td>
-</tr>
-</table>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archis Ukidwe - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background-color: #fff;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        header {
+            background-color: #2563eb;
+            color: #fff;
+            padding: 60px 40px 40px;
+            position: relative;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .headshot-container {
+            position: relative;
+        }
+        
+        .headshot {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .headshot:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .header-text {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .contact-info {
+            font-size: 1.1em;
+            margin-top: 15px;
+            opacity: 0.95;
+        }
+        
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .contact-info a:hover {
+            opacity: 0.8;
+            border-bottom: 2px solid #fff;
+        }
+        
+        nav {
+            background-color: #1e40af;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            position: relative;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            padding: 20px 30px;
+            display: block;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background-color: #f97316;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        nav a:hover::after {
+            width: 80%;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .content {
+            padding: 50px;
+        }
+        
+        section {
+            margin-bottom: 60px;
+            animation: slideIn 0.6s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        h2 {
+            color: #2563eb;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #2563eb;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .education-item, .experience-item, .leadership-item {
+            margin-bottom: 35px;
+            padding: 25px;
+            background-color: #f8fafc;
+            border-radius: 12px;
+            border-left: 5px solid #2563eb;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .education-item:hover, .experience-item:hover, .leadership-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+            border-left-color: #f97316;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .item-title {
+            font-weight: 700;
+            font-size: 1.3em;
+            color: #2563eb;
+            transition: color 0.3s ease;
+        }
+        
+        .experience-item:hover .item-title,
+        .leadership-item:hover .item-title {
+            color: #f97316;
+        }
+        
+        .item-date {
+            color: #f97316;
+            font-style: italic;
+            font-size: 1em;
+            font-weight: 600;
+        }
+        
+        .item-subtitle {
+            color: #555;
+            margin-bottom: 12px;
+            font-size: 1.05em;
+        }
+        
+        ul.details {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        ul.details li {
+            margin-bottom: 10px;
+            color: #444;
+            padding-left: 30px;
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+        
+        ul.details li:hover {
+            transform: translateX(5px);
+        }
+        
+        ul.details li::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            color: #f97316;
+            font-weight: bold;
+        }
+        
+        .gpa {
+            font-weight: 700;
+            color: #2563eb;
+        }
+        
+        .awards-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .awards-card {
+            background-color: #2563eb;
+            padding: 30px;
+            border-radius: 15px;
+            color: #fff;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .awards-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.3);
+        }
+        
+        .awards-card:nth-child(2) {
+            background-color: #f97316;
+        }
+        
+        .awards-card:nth-child(2):hover {
+            box-shadow: 0 15px 40px rgba(249, 115, 22, 0.3);
+        }
+        
+        .awards-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .awards-card p {
+            line-height: 1.8;
+        }
+        
+        footer {
+            background-color: #1e40af;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            font-size: 1em;
+        }
+        
+        .scroll-indicator {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #f97316;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(249, 115, 22, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .scroll-indicator.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .scroll-indicator:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.6);
+        }
+        
+        .scroll-indicator::after {
+            content: '↑';
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                border-radius: 15px;
+            }
+            
+            header {
+                padding: 40px 20px 30px;
+            }
+            
+            .header-content {
+                gap: 20px;
+            }
+            
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .headshot {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            nav a {
+                padding: 15px 20px;
+                font-size: 0.9em;
+            }
+            
+            h2 {
+                font-size: 1.8em;
+            }
+            
+            .item-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="headshot-container">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRseHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/2wBDAR" class="headshot" alt="Archis Ukidwe Professional Headshot">
+                </div>
+                <div class="header-text">
+                    <h1>Archis Ukidwe</h1>
+                    <div class="contact-info">
+                        (469) 586-7143 | Coppell, TX | <a href="mailto:archis.ukidwe@gmail.com">archis.ukidwe@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#awards">Awards & Interests</a></li>
+            </ul>
+        </nav>
+        
+        <div class="content">
+            <section id="education">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <div class="item-header">
+                        <span class="item-title">Texas A&M University</span>
+                        <span class="item-date">May 2028</span>
+                    </div>
+                    <div class="item-subtitle">College Station, Texas</div>
+                    <div class="item-subtitle">Bachelor of Business Administration in Management Information Systems</div>
+                    <div class="item-subtitle">Minor in Economics + AI in Business | <span class="gpa">Cumulative GPA: 4.00/4.00</span></div>
+                </div>
+            </section>
+            
+            <section id="experience">
+                <h2>Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Data Analytics Intern</span>
+                        <span class="item-date">May 2025 – August 2025</span>
+                    </div>
+                    <div class="item-subtitle">Health For All | College Station, TX</div>
+                    <ul class="details">
+                        <li>Organized and streamlined 15+ years of data by consolidating 24 data sets into a unified system, ensuring long-term utility</li>
+                        <li>Built and structured program data into 12 customized Salesforce reports, enhancing visibility and strategic usability</li>
+                        <li>Designed and built 10 interactive Salesforce dashboards to visualize trends and KPIs, enabling data-driven decision making</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Audio-Visual Specialist</span>
+                        <span class="item-date">September 2025 – Present</span>
+                    </div>
+                    <div class="item-subtitle">University Center & Special Events | College Station, TX</div>
+                    <ul class="details">
+                        <li>Calibrate, deploy, and troubleshoot A/V assets including mixers, projectors, and switchers achieving 100% on-time starts</li>
+                        <li>Coordinate with team leads and 20+ member crew to plan and execute A/V setups for 70+ university events every month</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Tutor</span>
+                        <span class="item-date">November 2023 – June 2025</span>
+                    </div>
+                    <div class="item-subtitle">Weber Educational Staffing | Coppell, TX</div>
+                    <ul class="details">
+                        <li>Tutored students on subjects such as pre-calculus, chemistry, and ACT prep, improving scores by an average of 4 points</li>
+                        <li>Taught important time management and effective study methods, resulting in improved academic performance</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="leadership">
+                <h2>Leadership & Involvement</h2>
+                
+                <div class="leadership-item">
+                    <div class="item-header">
+                        <span class="item-title">Consultant</span>
+                        <span class="item-date">September 2024 – Present</span>
+                    </div>
+                    <div class="item-subtitle">180 Degrees Consulting | College Station, TX</div>
+                    <ul class="details">
+                        <li>Collaborated with team of 5 to assemble a 40-page implementation packet, presenting achievable solutions to clients</li>
+                        <li>Implemented 5 social media growth strategies like a posting schedule and short form content to boost engagement by 20%</li>
+                        <li>Outlined 3 ways to improve CRM efficiency, including text-to-donate reporting, donor profiles, and recurring forecasts</li>
+                        <li>Facilitated the development of a flagship philanthropic event, contributing to a 15% increase in individual donors</li>
+                        <li>Produced a 3-year growth plan with an operating budget of $2.5 million; provided KPI framework and optimized spending</li>
+                    </ul>
+                </div>
+                
+                <div class="leadership-item">
+                    <div class="item-header">
+                        <span class="item-title">VP of Community Service, Service Committee, Recruitment Committee, Member</span>
+                        <span class="item-date">August 2024 – Present</span>
+                    </div>
+                    <div class="item-subtitle">Delta Sigma Pi | College Station, TX</div>
+                    <ul class="details">
+                        <li>Coordinated service events with 11 local non-profits and student organizations, resulting in 400+ total volunteer hours</li>
+                        <li>Participated in professional development events, including interactive workshops, guest speaker sessions, and networking</li>
+                        <li>Reviewed 120 applications and conducted 20 interviews to assist Senior VP's in selecting chapter members</li>
+                        <li>Represented Lambda Nu chapter at Grand Chapter Congress, voted on national policies, and interacted with 300+ delegates</li>
+                    </ul>
+                </div>
+                
+                <div class="leadership-item">
+                    <div class="item-header">
+                        <span class="item-title">Analyst</span>
+                        <span class="item-date">November 2024</span>
+                    </div>
+                    <div class="item-subtitle">Accenture Case Competition – 1st Place | College Station, TX</div>
+                    <ul class="details">
+                        <li>Created action matrix to highlight key problems; listed 8 key metrics to track efficiency of new proposed online platform</li>
+                        <li>Identified staffing bloat (217.6 vs peers' 42.4), suggesting a 60% cut through remote work and automating back-office work</li>
+                        <li>Pitched 3 new fintech offerings, including buy-now-pay-later and P2P payment features, to boost number of younger users</li>
+                        <li>Conducted research on AI compliance regulations, ensuring proposed solutions are realistic and align with legal standards</li>
+                    </ul>
+                </div>
+                
+                <div class="leadership-item">
+                    <div class="item-header">
+                        <span class="item-title">Analyst</span>
+                        <span class="item-date">December 2024</span>
+                    </div>
+                    <div class="item-subtitle">Product @ TAMU Idea-Thon | College Station, TX</div>
+                    <ul class="details">
+                        <li>Collaborated with team of 3 to design a mental health app for students, using Figma to prototype interactive UI features</li>
+                        <li>Conducted market analysis of competitors like Calm and Talkspace, identifying 4 unique features to enhance user engagement</li>
+                        <li>Developed a comprehensive business strategy, estimating initial startup costs of $260,000 and ongoing expenses of $650,000</li>
+                        <li>Led strategic planning for market entry, suggesting a phased rollout starting with local schools and scaling to a national level</li>
+                    </ul>
+                </div>
+                
+                <div class="leadership-item">
+                    <div class="item-header">
+                        <span class="item-title">Member</span>
+                        <span class="item-date">August 2024 – May 2025</span>
+                    </div>
+                    <div class="item-subtitle">Product @ TAMU | College Station, TX</div>
+                    <ul class="details">
+                        <li>Networked with industry leaders in the product management field through professional panels and guest speakers</li>
+                        <li>Gained hands-on experience in UI design and basic project prototyping through student-led workshops</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="awards">
+                <h2>Awards, Activities & Interests</h2>
+                <div class="awards-section">
+                    <div class="awards-card">
+                        <h3>Awards & Activities</h3>
+                        <p>Eagle Scout, Dean's Honor Roll, Intermural Volleyball, Marathi (Fluent)</p>
+                    </div>
+                    <div class="awards-card">
+                        <h3>Interests</h3>
+                        <p>Hiking, Poker, Traveling, Texas A&M Athletics, Dallas Sports, Weightlifting, EDM, Photography, Running, Formula 1</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Archis Ukidwe. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <div class="scroll-indicator" id="scrollTop"></div>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+        
+        // Show/hide scroll to top button
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top functionality
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Add animation to sections as they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
 </html>
